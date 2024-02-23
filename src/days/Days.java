@@ -4,31 +4,65 @@
  */
 package days;
 
-import java.util.Scanner;
+interface Day {
+    void printName();
+}
 
-/**This class takes String input from user 
- * and calls method  to print the 
- * name of the day.
- * if the input is not given in String, 
- * program will accept and produce wrong results. 
- * change the code to use enums which avoids String input 
- * then print the week day names. 
- *
- * @author sivagamasrinivasan
- */
+class Monday implements Day {
+    @Override
+    public void printName() {
+        System.out.println("Monday");
+    }
+}
+
+class Tuesday implements Day {
+    @Override
+    public void printName() {
+        System.out.println("Tuesday");
+    }
+}
+
+class Wednesday implements Day {
+    @Override
+    public void printName() {
+        System.out.println("Wednesday");
+    }
+}
+
+class Thursday implements Day {
+    @Override
+    public void printName() {
+        System.out.println("Thursday");
+    }
+}
+
+class Friday implements Day {
+    @Override
+    public void printName() {
+        System.out.println("Friday");
+    }
+}
+
+class Saturday implements Day {
+    @Override
+    public void printName() {
+        System.out.println("Saturday");
+    }
+}
+
+class Sunday implements Day {
+    @Override
+    public void printName() {
+        System.out.println("Sunday");
+    }
+}
+
 public class Days {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-         
-    Scanner in =new Scanner(System.in);
-    System.out.println("Enter the day number (one,two,three,four,five) in string");
-    String code = in.next();
-    Weekdays t= new Weekdays();
-    t.nameOfDay(code); 
-    }// TODO code application logic here
-    
-    
+        System.out.println("All the days' names:");
+        Day[] days = {new Monday(), new Tuesday(), new Wednesday(), new Thursday(), new Friday(), new Saturday(), new Sunday()};
+        for (Day day : days) {
+            day.printName();
+        }
+    }
 }
